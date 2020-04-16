@@ -1,0 +1,49 @@
+<html>
+<title>Location Details</title>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="table-list">
+        <a class="location-link btn btn-primary pull-right" href="/addLocation">Add new location</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>File</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < locations.length ; i++) { %>
+                    <tr>
+                        <td>
+                            <%= locations[i].id %>
+                        </td>
+                        <td>
+                            <%= locations[i].state_name %>
+                        </td>
+                        <td>
+                            <%= locations[i].city_name %>
+                        </td>
+                        <td>
+                            <%= locations[i].country_name %>
+                        </td>
+                        <td>
+                            <a target="_blank" href="/documents/<%= locations[i].filename %>">
+                                <%= locations[i].filename %>
+                            </a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
